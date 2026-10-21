@@ -1,0 +1,1922 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Charithavya Mailavarapu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark developer portfolio. Sticky nav, hero with live code window, tech marquee, stats, three service cards,
+   project explorer with list and detail panes, tabbed experience, searchable skills, education, contact. */
+:root{
+  color-scheme:dark;
+  --bg:#0A0E1A; --band:#0C1120; --card:#111827; --card2:#0F1524; --line:#1E2840; --line2:#2A3654;
+  --text:#E8ECF5; --soft:#C3CBDA; --muted:#93A0B8; --faint:#6E7B94;
+  --fe:#8FA8FF; --be:#7DD8C3; --ai:#FFB38A; --data:#C9A7FF;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut-l:max(clamp(20px,5vw,48px),env(safe-area-inset-left,0px));
+  --gut-r:max(clamp(20px,5vw,48px),env(safe-area-inset-right,0px));
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:rgba(10,14,26,.92)}
+a{color:#A9BCFF;text-decoration:none}
+a:hover{color:#fff}
+:focus-visible{outline:2px solid var(--fe);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+section{scroll-margin-top:84px}
+.band{background:var(--band);border-block:1px solid #161F33}
+.pad{padding-block:clamp(72px,10vw,120px)}
+.h2{margin:0;font-size:clamp(32px,4.4vw,54px);letter-spacing:-.04em;font-weight:700;line-height:1.04;text-wrap:balance}
+.sub{margin:0;font-size:18px;color:var(--muted);line-height:1.6;max-width:56ch}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px}
+.head>div{display:flex;flex-direction:column;gap:14px;max-width:640px;min-width:0}
+.dots{background-image:radial-gradient(#1C2640 1px,transparent 1px);background-size:22px 22px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(10,14,26,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #161F33}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text);font-weight:600}
+.mono-mark{width:40px;height:40px;border-radius:11px;background:var(--fe);color:var(--bg);display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em}
+.links{display:flex;gap:6px}
+.links a{color:var(--muted);font-size:15px;font-weight:500;padding:10px 12px;border-radius:9px}
+.links a:hover,.links a.on{color:var(--text);background:#121A2B}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:12px;font-size:15px;font-weight:600;border:1px solid var(--line2);color:var(--text);background:#121A2B;cursor:pointer;font-family:inherit;transition:border-color .2s,background .2s,transform .2s}
+.btn:hover{border-color:var(--fe);color:#fff;transform:translateY(-1px)}
+.btn.primary{background:var(--fe);border-color:var(--fe);color:var(--bg)}
+.btn.primary:hover{background:#B3C3FF;border-color:#B3C3FF;color:var(--bg)}
+.btn.sm{min-height:44px;padding:0 18px}
+
+/* hero */
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-block:clamp(56px,9vw,112px)}
+.hero-l{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:26px}
+.badge{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:8px 14px;border:1px solid #22304D;border-radius:999px;background:var(--card2);font-size:14px;color:#B5C0D4}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--be);box-shadow:0 0 0 0 rgba(125,216,195,.6);animation:pu 2s infinite;flex-shrink:0}
+@keyframes pu{70%{box-shadow:0 0 0 8px rgba(125,216,195,0)}100%{box-shadow:0 0 0 0 rgba(125,216,195,0)}}
+.hero h1{margin:0;font-size:clamp(42px,6.4vw,80px);line-height:1;letter-spacing:-.045em;font-weight:700;text-wrap:balance}
+.typed{font-family:var(--mono);font-size:clamp(17px,2vw,21px);color:#A9BCFF;min-height:1.6em}
+.caret{display:inline-block;width:3px;height:.9em;background:var(--fe);margin-left:4px;vertical-align:-.08em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.lede{margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.65;color:#A3AEC2;max-width:54ch}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.ide{flex:1 1 440px;min-width:0;background:#0D1322;border:1px solid #22304D;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+.ide-bar{display:flex;align-items:center;gap:8px;padding-left:18px;border-bottom:1px solid var(--line);background:#0F1626}
+.light{width:11px;height:11px;border-radius:50%;background:var(--line2)}
+.ctabs{display:flex;overflow-x:auto;margin-left:12px}
+.ctab{font-family:var(--mono);font-size:13px;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;padding:12px 14px;cursor:pointer;min-height:44px;white-space:nowrap}
+.ctab:hover{color:var(--text)}
+.ctab[aria-selected="true"]{color:var(--text);border-bottom-color:var(--fe)}
+.ide-body{padding:22px 24px;overflow-x:auto;min-height:330px}
+.code{font-family:var(--mono);font-size:13.5px;line-height:1.75;white-space:pre;color:#C9D2E3;margin:0}
+.k{color:#B9A4FF}.s{color:var(--ai)}.c{color:var(--faint)}.n{color:var(--be)}.f{color:var(--fe)}
+
+/* marquee + stats */
+.marquee{overflow:hidden;border-block:1px solid #161F33;padding-block:20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mtrack{display:flex;width:max-content;animation:mq 50s linear infinite}
+.marquee:hover .mtrack{animation-play-state:paused}
+.mitem{font-size:18px;font-weight:500;color:var(--faint);white-space:nowrap;display:flex;align-items:center;gap:44px;padding-right:44px}
+.mitem::after{content:"";width:5px;height:5px;border-radius:50%;background:#2E3B5C}
+@keyframes mq{to{transform:translateX(-50%)}}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat{padding:30px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.stat:last-child{border-right:0}
+.stat b{font-size:44px;font-weight:700;letter-spacing:-.04em;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font-size:15px;color:var(--muted);line-height:1.45}
+
+/* services */
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc{background:var(--card2);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:18px;min-width:0;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--c)}
+.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.svc h3{margin:0;font-size:23px;font-weight:650;letter-spacing:-.02em}
+.svc p{margin:0;font-size:16px;line-height:1.6;color:#A3AEC2}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--mono);font-size:12px;color:#A9BCFF;background:#151F3A;padding:5px 10px;border-radius:6px;white-space:nowrap}
+.pill{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 35%,transparent)}
+
+/* filters */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:inherit;font-size:14px;font-weight:500;padding:0 16px;min-height:44px;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.chip:hover{color:var(--text);border-color:#3B4A70}
+.chip[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:var(--bg)}
+.chip .cnt{font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:row dense;gap:20px}
+.tile{all:unset;box-sizing:border-box;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:14px;cursor:pointer;min-width:0;transition:border-color .25s,transform .25s,background .25s;color:var(--text);font-family:var(--sans);position:relative;overflow:hidden}
+.tile:hover{border-color:#3E4E78;transform:translateY(-3px);background:#131C2E}
+.tile:focus-visible{outline:2px solid var(--fe);outline-offset:3px}
+.tile.big{grid-column:span 2;grid-row:span 2;padding:34px;background:#121B30}
+.tile.wide{grid-column:span 2}
+.tile .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.tile .org{font-size:13px;font-weight:600;color:var(--muted)}
+.tile .pills{display:flex;gap:6px;flex-wrap:wrap}
+.metric{display:flex;flex-direction:column;gap:4px;padding-top:4px}
+.metric b{font-size:48px;font-weight:700;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.tile.big .metric b{font-size:68px}
+.metric span{font-size:14px;color:var(--muted)}
+.tile h3{margin:0;font-size:20px;font-weight:650;letter-spacing:-.02em;line-height:1.25}
+.tile.big h3{font-size:28px}
+.tile p{margin:0;font-size:15px;line-height:1.6;color:#A3AEC2}
+.more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#A9BCFF;padding-top:6px}
+.tile:hover .more{color:#fff}
+.mock{border:1px solid #26345A;border-radius:14px;background:#0B1120;display:grid;grid-template-columns:1.2fr 1fr;overflow:hidden}
+.mock-doc{padding:18px;display:flex;flex-direction:column;gap:9px;border-right:1px solid var(--line)}
+.mock small{font-size:11px;color:var(--faint);margin-bottom:4px}
+.ln{height:8px;border-radius:4px;background:#1C2640}
+.ln.hl{background:color-mix(in srgb,var(--ai) 45%,#1C2640)}
+.mock-f{padding:16px;display:flex;flex-direction:column;gap:8px}
+.fld{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:13px;background:#0F1626}
+.fld span:first-child{color:var(--muted)}
+.fld span:last-child{font-family:var(--mono)}
+.ok{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--be);margin-top:4px}
+
+/* personal */
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.pcard .metric b{font-size:44px}
+.pcard ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.pcard li{display:flex;gap:10px;font-size:15px;line-height:1.55;color:var(--soft)}
+.pcard li svg{flex-shrink:0;margin-top:3px}
+.pcard h3{margin:0;font-size:22px;font-weight:650;letter-spacing:-.02em}
+.pcard p{margin:0;font-size:15.5px;line-height:1.6;color:#A3AEC2}
+.badge-p{font-size:12px;font-weight:600;color:var(--data);border:1px solid color-mix(in srgb,var(--data) 40%,transparent);padding:3px 10px;border-radius:999px}
+.mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
+.mcard{background:var(--card2);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:border-color .25s}
+.mcard:hover{border-color:#3E4E78}
+.mcard h3{margin:0;font-size:18px;font-weight:650}
+.mcard p{margin:0;font-size:15px;line-height:1.55;color:#A3AEC2}
+.gh{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin-top:auto;padding-top:4px}
+
+/* experience */
+.exp{display:grid;grid-template-columns:280px minmax(0,1fr);gap:48px;align-items:start}
+.jtabs{display:flex;flex-direction:column}
+.jtab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;width:100%;background:none;border:0;border-left:2px solid var(--line);padding:14px 20px;cursor:pointer;font-family:inherit;color:var(--muted);min-height:56px;transition:background .2s,color .2s}
+.jtab:hover{background:#121A2B;color:var(--text)}
+.jtab[aria-selected="true"]{border-left-color:var(--fe);background:#121A2B;color:var(--text)}
+.jtab b{font-size:16px;font-weight:600}
+.jtab span{font-size:13px;opacity:.75}
+.jpanel{display:flex;flex-direction:column;gap:22px;min-width:0}
+.jpanel h3{margin:0;font-size:clamp(23px,2.6vw,30px);font-weight:650;letter-spacing:-.025em;line-height:1.2}
+.jpanel h3 em{font-style:normal;color:var(--fe)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;color:var(--muted)}
+.jpanel ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+.jpanel li{display:flex;gap:14px;font-size:16.5px;line-height:1.6;color:var(--soft);max-width:72ch}
+.jpanel li svg{flex-shrink:0;margin-top:4px}
+
+/* skills */
+.search{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 16px;border:1px solid var(--line2);border-radius:12px;background:var(--card2);flex:1 1 300px;max-width:440px}
+.search:focus-within{border-color:var(--fe)}
+.search input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:inherit;font-size:15px;color:var(--text);min-height:46px}
+.search input::placeholder{color:var(--faint)}
+.skgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:row dense;gap:16px}
+.skcard{background:var(--card2);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.skcard.wide{grid-column:span 2}
+.skcard .t{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.skcard h3{margin:0;font-size:18px;font-weight:650;letter-spacing:-.015em;display:flex;align-items:center;gap:10px}
+.skcard h3 i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.skcard .t span{font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.sks{display:flex;flex-wrap:wrap;gap:7px}
+.sk{font-size:14px;color:#C9D2E3;border:1px solid #222D47;background:#111A2C;padding:7px 12px;border-radius:9px}
+.sk.hit{background:var(--c);border-color:var(--c);color:var(--bg);font-weight:600}
+.empty{margin:0 0 16px;color:var(--muted)}
+
+/* education + contact */
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ecard{background:var(--card2);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;gap:20px;align-items:flex-start;min-width:0}
+.ecard .ico{--c:var(--data);flex-shrink:0}
+.ecard h3{margin:0 0 4px;font-size:21px;font-weight:650;letter-spacing:-.02em}
+.ecard p{margin:0;color:var(--soft)}
+.ecard small{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
+.cta{border:1px solid #22304D;border-radius:28px;background-color:#0F1626;padding:clamp(28px,6vw,80px);display:flex;flex-direction:column;gap:28px;align-items:flex-start;position:relative;overflow:hidden}
+.cta h2{margin:0;font-size:clamp(36px,6vw,72px);letter-spacing:-.045em;font-weight:700;line-height:1;max-width:14ch;text-wrap:balance}
+.cta p{margin:0;font-size:18px;color:#A3AEC2;line-height:1.6;max-width:52ch}
+.mail{font-family:var(--mono);font-size:clamp(14px,2vw,19px);padding:14px 18px;border:1px solid var(--line2);border-radius:12px;background:var(--bg);overflow-wrap:anywhere;user-select:all}
+.clinks{display:flex;flex-wrap:wrap;gap:12px 32px;font-size:16px;color:var(--muted);padding-top:8px}
+.stripe{display:flex;gap:6px;position:absolute;top:clamp(28px,6vw,80px);right:clamp(28px,6vw,80px)}
+.stripe i{width:12px;height:12px;border-radius:4px;background:var(--c)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;font-size:14px;color:var(--faint)}
+
+/* dialog */
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(5,8,16,.8);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;justify-content:center;align-items:flex-start;overflow-y:auto;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.modal{position:relative;width:100%;max-width:820px;margin-block:clamp(0px,4vh,48px);background:#0F1626;border:1px solid var(--line2);border-radius:24px;padding:clamp(22px,4vw,44px);display:flex;flex-direction:column;gap:26px;box-shadow:0 40px 120px -20px rgba(0,0,0,.8);animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.985)}}
+.x{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:12px;border:1px solid var(--line2);background:#121A2B;color:var(--text);display:grid;place-items:center;cursor:pointer}
+.x:hover{border-color:var(--fe)}
+.modal h3{margin:0;font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-.035em;line-height:1.08;padding-right:52px}
+.mmetrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.mm{border:1px solid #22304D;border-radius:14px;padding:16px 18px;background:#0B1120;display:flex;flex-direction:column;gap:4px}
+.mm b{font-size:30px;font-weight:700;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.mm span{font-size:13.5px;color:var(--muted);line-height:1.4}
+.ml{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 10px}
+.modal ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.modal li{display:flex;gap:12px;font-size:16px;line-height:1.6;color:var(--soft)}
+.modal li svg{flex-shrink:0;margin-top:4px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.step{font-family:var(--mono);font-size:12.5px;padding:8px 12px;border:1px solid var(--line2);border-radius:9px;background:#0B1120;color:#DDE3EE;white-space:nowrap}
+.result{border-left:3px solid var(--fe);padding:4px 0 4px 18px}
+.result p{margin:0;font-size:17px;line-height:1.6}
+
+.pgroup{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:var(--faint);padding:14px 10px 6px}
+.pgroup:first-child{padding-top:2px}
+.pgroup span{font-weight:500;font-variant-numeric:tabular-nums}
+.skillchip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 6px 0 14px;border-radius:999px;background:color-mix(in srgb,var(--fe) 16%,transparent);border:1px solid color-mix(in srgb,var(--fe) 45%,transparent);font-size:14px;color:var(--soft)}
+.skillchip b{color:var(--text);font-weight:600}
+.skillchip button{all:unset;cursor:pointer;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:var(--text)}
+.skillchip button:hover{background:rgba(255,255,255,.08)}
+.skillchip button:focus-visible{outline:2px solid var(--fe)}
+.core-l{margin:0 0 12px;font-size:14px;font-weight:600;color:var(--muted)}
+.core{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:12px;margin-bottom:44px}
+.coret{all:unset;box-sizing:border-box;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:6px;cursor:pointer;min-width:0;transition:border-color .2s,transform .2s}
+.coret:hover{border-color:color-mix(in srgb,var(--c) 60%,var(--line2));transform:translateY(-2px)}
+.coret:focus-visible{outline:2px solid var(--fe);outline-offset:2px}
+.coret i{width:24px;height:4px;border-radius:2px;background:var(--c);margin-bottom:4px}
+.coret b{font-size:17px;font-weight:650;letter-spacing:-.015em;color:var(--text);overflow-wrap:anywhere}
+.coret span{font-size:13px;color:var(--muted)}
+.matrix{border-top:1px solid var(--line2)}
+.skrow{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;padding-block:22px;border-bottom:1px solid var(--line)}
+.skrow h3{margin:0;font-size:17px;font-weight:650;letter-spacing:-.015em;display:flex;align-items:center;gap:10px}
+.skrow h3 i{width:8px;height:8px;border-radius:50%;background:var(--c);flex-shrink:0}
+.skrow .cnt{display:block;font-size:13px;color:var(--faint);margin:4px 0 0 18px}
+.toks{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.tok{font-family:inherit;font-size:14.5px;line-height:1.3;color:var(--soft);background:transparent;border:1px solid var(--line);padding:7px 13px;border-radius:999px;display:inline-flex;align-items:center;gap:7px}
+button.tok{cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+button.tok:hover{border-color:var(--c);color:#fff;background:color-mix(in srgb,var(--c) 10%,transparent)}
+button.tok:focus-visible{outline:2px solid var(--fe);outline-offset:2px}
+.tok sup{font-size:11px;font-weight:700;color:var(--c);vertical-align:baseline;font-variant-numeric:tabular-nums}
+.tok.hit{background:color-mix(in srgb,var(--c) 18%,transparent);border-color:var(--c);color:#fff}
+.head>.ring-ctl{display:flex;flex-direction:row;gap:8px;align-self:flex-end}
+.stage{position:relative;height:300px;perspective:1300px;perspective-origin:50% 30%;overflow:hidden;margin-inline:calc(var(--gut-l)*-1) calc(var(--gut-r)*-1);touch-action:pan-y}
+.floor{position:absolute;left:50%;bottom:22px;width:min(820px,90%);height:90px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--fe) 18%,transparent),transparent 70%)}
+.ring{position:absolute;inset:0;transform-style:preserve-3d}
+.rcard{all:unset;box-sizing:border-box;position:absolute;left:50%;top:46%;width:196px;height:164px;padding:20px;border-radius:20px;background:#111827;border:1px solid var(--line2);display:flex;flex-direction:column;gap:10px;cursor:pointer;color:var(--text);font-family:var(--sans);transition:transform .8s cubic-bezier(.22,.8,.2,1),opacity .5s,filter .8s,box-shadow .4s,border-color .4s,background .4s}
+.rcard:focus-visible{outline:2px solid var(--fe);outline-offset:3px}
+.rcard.front{background:#151F36;border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 24px 60px -18px color-mix(in srgb,var(--c) 55%,transparent)}
+.rico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 15%,transparent)}
+.rcard b{font-size:16.5px;font-weight:650;letter-spacing:-.015em;line-height:1.25}
+.rcnt{font-size:13px;color:var(--muted);margin-top:auto}
+.spanel{position:relative;background:var(--card);border:1px solid color-mix(in srgb,var(--c) 40%,var(--line));border-radius:24px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:20px;margin-top:8px;transition:border-color .4s}
+.sp-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.sp-head h3{margin:0;font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-.03em;display:flex;align-items:center;gap:12px}
+.sp-head h3 i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
+.sp-head p{margin:6px 0 0;color:var(--muted);font-size:16px}
+.sp-n{font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.sp-chips{display:flex;flex-wrap:wrap;gap:10px}
+.pop{font-family:inherit;font-size:15px;color:var(--text);background:color-mix(in srgb,var(--c) 10%,#0F1524);border:1px solid color-mix(in srgb,var(--c) 45%,var(--line));padding:9px 15px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;animation:popin .45s cubic-bezier(.2,1.4,.4,1) both;animation-delay:var(--d)}
+button.pop{cursor:pointer}
+button.pop:hover{background:color-mix(in srgb,var(--c) 22%,#0F1524);border-color:var(--c)}
+button.pop:focus-visible{outline:2px solid var(--fe);outline-offset:2px}
+.pop sup{font-size:11px;font-weight:700;color:var(--c);vertical-align:baseline}
+@keyframes popin{from{opacity:0;transform:translateY(10px) scale(.7)}}
+.allsk{margin-top:24px;border-top:1px solid var(--line)}
+.allsk summary{cursor:pointer;list-style:none;padding:18px 0;font-size:15px;font-weight:600;color:#A9BCFF;display:flex;align-items:center;gap:10px}
+.allsk summary::-webkit-details-marker{display:none}
+.allsk summary::before{content:"+";font-family:var(--mono);font-size:16px}
+.allsk[open] summary::before{content:"−"}
+.allsk-in{display:flex;flex-direction:column;gap:20px;padding-bottom:8px}
+/* project explorer */
+.pxbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:20px}
+.seg{display:flex;gap:4px;padding:4px;background:var(--card2);border:1px solid var(--line);border-radius:14px;overflow-x:auto;max-width:100%;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:10px;font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.seg button:hover{color:var(--text)}
+.seg button[aria-pressed="true"]{background:#1B2643;color:var(--text);box-shadow:inset 0 0 0 1px var(--line2)}
+.seg button:focus-visible{outline:2px solid var(--fe);outline-offset:2px}
+.seg .cnt{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+.px{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:24px;align-items:start}
+.plist-wrap{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pcount{font-size:13px;color:var(--faint);padding-left:4px}
+.plist{display:flex;flex-direction:column;gap:6px;max-height:840px;overflow-y:auto;padding:2px 6px 2px 2px;scrollbar-width:thin;scrollbar-color:#2A3654 transparent}
+.pitem{all:unset;box-sizing:border-box;display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:14px;padding:14px;border-radius:14px;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s}
+.pitem:hover{background:#111A2C}
+.pitem[aria-selected="true"]{background:var(--card);border-color:color-mix(in srgb,var(--c) 45%,var(--line2))}
+.pitem:focus-visible{outline:2px solid var(--fe);outline-offset:2px}
+.pico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.ptxt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ptxt b{font-size:15px;font-weight:600;color:var(--text);line-height:1.3}
+.ptxt span{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.ptag{font-size:11px;font-weight:600;color:var(--data);border:1px solid color-mix(in srgb,var(--data) 40%,transparent);padding:0 7px;border-radius:99px;line-height:18px}
+.pmet{display:flex;flex-direction:column;align-items:flex-end}
+.pmet b{font-size:16px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--text);white-space:nowrap}
+.pmet span{font-size:11.5px;color:var(--faint);white-space:nowrap}
+.pempty{padding:24px 16px;color:var(--muted);font-size:15px}
+.pdetail{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,3.4vw,40px);position:sticky;top:calc(88px + env(safe-area-inset-top,0px));min-width:0}
+.pd-in{display:flex;flex-direction:column;gap:24px;animation:fadein .28s ease-out}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}}
+.pd-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.pd-top .pills{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.typeb{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--text);color:var(--bg)}
+.typeb.personal{background:var(--data)}
+.pd-nav{display:flex;gap:8px}
+.icon-btn{width:44px;height:44px;border-radius:12px;border:1px solid var(--line2);background:#121A2B;color:var(--text);display:grid;place-items:center;cursor:pointer;font-family:inherit}
+.icon-btn:hover{border-color:var(--fe)}
+.icon-btn:disabled{opacity:.35;cursor:default;border-color:var(--line2)}
+.pd-head{display:flex;flex-direction:column;gap:8px}
+.pdetail h3{margin:0;font-size:clamp(26px,3.2vw,38px);font-weight:700;letter-spacing:-.035em;line-height:1.08;text-wrap:balance}
+.pd-meta{font-size:15px;color:var(--muted)}
+.pd-sum{margin:0;font-size:17px;line-height:1.65;color:var(--soft);max-width:68ch}
+.arch{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.arch li{display:flex;align-items:center;gap:8px}
+.node{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12.5px;padding:7px 12px 7px 7px;border:1px solid var(--line2);border-radius:10px;background:#0B1120;color:#DDE3EE;white-space:nowrap}
+.node i{font-style:normal;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:10.5px;font-weight:600;background:color-mix(in srgb,var(--c) 18%,transparent);color:var(--c)}
+.pd-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.pd-two p:not(.ml){margin:0;font-size:16px;line-height:1.6;color:var(--soft)}
+.hl{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.hl li{display:flex;gap:12px;font-size:16px;line-height:1.6;color:var(--soft)}
+.hl li svg{flex-shrink:0;margin-top:4px}
+.pd-foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:20px}
+.pd-foot .tags{flex:1 1 320px}
+.pdetail .mock{margin-top:2px}
+.result .ml{font-size:14px;line-height:1.6;margin:0 0 10px}
+.plist{-webkit-mask-image:linear-gradient(#000 calc(100% - 48px),transparent);mask-image:linear-gradient(#000 calc(100% - 48px),transparent);padding-bottom:40px}
+
+@media (max-width:1040px){
+  .core{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .bento,.skgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svcs,.mini{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:860px){
+  .skrow{grid-template-columns:minmax(0,1fr);gap:12px}
+  .pgroup{display:none}
+  .px{grid-template-columns:minmax(0,1fr)}
+  .plist{flex-direction:row;max-height:none;overflow-x:auto;overflow-y:hidden;padding-bottom:8px}
+  .pitem{min-width:280px;border-color:var(--line)}
+  .pdetail{position:static}
+  .plist{-webkit-mask-image:none;mask-image:none}
+  .mmetrics{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .links{display:none}
+  .exp{grid-template-columns:minmax(0,1fr);gap:28px}
+  .jtabs{flex-direction:row;overflow-x:auto}
+  .jtab{border-left:0;border-bottom:2px solid var(--line);min-width:170px}
+  .jtab[aria-selected="true"]{border-bottom-color:var(--fe)}
+  .pgrid,.edu{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .stage{height:250px}
+  .rcard{width:150px;height:138px;padding:16px}
+  .rcard b{font-size:14.5px}
+  .rico{width:38px;height:38px}
+  .core{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pd-two{grid-template-columns:minmax(0,1fr)}
+  .pmet{display:none}
+  .pitem{grid-template-columns:40px minmax(0,1fr);min-width:250px}
+  .bento,.skgrid,.stats{grid-template-columns:minmax(0,1fr)}
+  .tile.big,.tile.wide,.skcard.wide{grid-column:auto;grid-row:auto}
+  .tile.big .metric b{font-size:52px}
+  .mock{grid-template-columns:1fr}
+  .mock-doc{display:none}
+  .stat{border-right:0;border-bottom:1px solid var(--line)}
+  .stat:last-child{border-bottom:0}
+  .stripe{display:none}
+  .nav .btn{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .caret,.pulse,.mtrack,.modal,.pd-in,.pop{animation:none}
+  .rcard{transition:none}
+  .tile:hover,.btn:hover{transform:none}
+}
+</style>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mono-mark">CM</span><span>Charithavya</span></a>
+    <div class="links" id="links">
+      <a href="#services">What I do</a><a href="#experience">Experience</a><a href="#skills">Skills</a>
+    </div>
+    <a class="btn sm" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero dots" id="top">
+  <div class="wrap">
+    <div class="hero-l">
+      <span class="badge"><span class="pulse"></span>Open to full-time roles, remote or on-site</span>
+      <h1>Charithavya Mailavarapu</h1>
+      <div class="typed" aria-live="polite">&gt; <span id="typed">Python Full Stack Engineer</span><span class="caret"></span></div>
+      <p class="lede" id="lede"></p>
+      <div class="row">
+        <a class="btn primary" href="#experience">View my experience <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn" href="https://github.com/charithavya" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/charithavya-mailavarapu" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="ide">
+      <div class="ide-bar">
+        <span class="light"></span><span class="light"></span><span class="light"></span>
+        <div class="ctabs" role="tablist" aria-label="Code files">
+          <button class="ctab" role="tab" aria-selected="true" data-tab="py" id="ct-py">engineer.py</button>
+          <button class="ctab" role="tab" aria-selected="false" data-tab="ts" id="ct-ts">stack.ts</button>
+          <button class="ctab" role="tab" aria-selected="false" data-tab="json" id="ct-json">impact.json</button>
+        </div>
+      </div>
+      <div class="ide-body">
+<pre class="code" data-pane="py"><span class="k">class</span> <span class="f">Engineer</span>:
+    name    = <span class="s">"Charithavya Mailavarapu"</span>
+    role    = <span class="s">"Senior Python Full Stack Engineer"</span>
+    years   = <span class="n">7</span>
+    domains = [<span class="s">"banking"</span>, <span class="s">"health care"</span>, <span class="s">"retail"</span>]
+
+    <span class="k">async def</span> <span class="f">build</span>(self, idea):
+        ui    = <span class="k">await</span> <span class="f">nextjs</span>(idea)    <span class="c"># React + TypeScript</span>
+        api   = <span class="k">await</span> <span class="f">fastapi</span>(ui)     <span class="c"># p95 under 300 ms</span>
+        brain = <span class="k">await</span> <span class="f">llm</span>(api, rag=<span class="k">True</span>)
+        <span class="k">return</span> <span class="f">ship</span>(ui, api, brain)  <span class="c"># tested, monitored</span></pre>
+<pre class="code" data-pane="ts" hidden><span class="k">export const</span> <span class="f">stack</span> = {
+  frontend: [<span class="s">"React"</span>, <span class="s">"Next.js"</span>, <span class="s">"TypeScript"</span>, <span class="s">"Tailwind"</span>],
+  backend:  [<span class="s">"FastAPI"</span>, <span class="s">"Django"</span>, <span class="s">"Node.js"</span>, <span class="s">"GraphQL"</span>],
+  ai:       [<span class="s">"Claude"</span>, <span class="s">"Bedrock"</span>, <span class="s">"LangGraph"</span>, <span class="s">"MCP"</span>],
+  data:     [<span class="s">"PostgreSQL"</span>, <span class="s">"pgvector"</span>, <span class="s">"Kafka"</span>, <span class="s">"Redis"</span>],
+  cloud:    [<span class="s">"AWS"</span>, <span class="s">"Docker"</span>, <span class="s">"Kubernetes"</span>, <span class="s">"Terraform"</span>],
+} <span class="k">as const</span>;
+
+<span class="c">// one engineer, every layer</span>
+<span class="k">type</span> <span class="f">Layer</span> = <span class="k">keyof typeof</span> stack;</pre>
+<pre class="code" data-pane="json" hidden>{
+  <span class="f">"loan_review_minutes"</span>:  [<span class="n">45</span>, <span class="n">12</span>],
+  <span class="f">"rag_accuracy"</span>:         <span class="n">0.91</span>,
+  <span class="f">"concurrent_sessions"</span>:  <span class="n">300</span>,
+  <span class="f">"docs_per_day_peak"</span>:    <span class="n">5000</span>,
+  <span class="f">"llm_cost_vs_budget"</span>:   <span class="n">-0.30</span>,
+  <span class="f">"vector_storage_cost"</span>:  <span class="n">-0.60</span>,
+  <span class="f">"patient_no_shows"</span>:     <span class="n">-0.18</span>,
+  <span class="f">"stockouts_pilot"</span>:      <span class="n">-0.12</span>,
+  <span class="f">"test_coverage"</span>:        <span class="s">"85%+"</span>
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="mtrack" id="marquee"></div></div>
+
+<section aria-label="Highlights" style="border-bottom:1px solid #161F33">
+  <div class="wrap"><div class="stats" id="stats"></div></div>
+</section>
+
+<section id="services" class="pad">
+  <div class="wrap">
+    <div class="head"><div><h2 class="h2">One engineer for the whole stack</h2><p class="sub">I own features end to end, so the interface, the API, and the AI behind it are designed together.</p></div></div>
+    <div class="svcs" id="svcs"></div>
+  </div>
+</section>
+
+<section id="projects" class="pad band" hidden>
+  <div class="wrap">
+    <div class="head"><div><h2 class="h2">Projects</h2><p class="sub">Thirteen builds across work and personal projects, each one distinct. Filter, search, and open any project to see its architecture, engineering decisions, and measured impact.</p></div></div>
+    <div class="pxbar">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;min-width:0"><div class="seg" role="group" aria-label="Filter projects" id="seg"></div><div class="skillchip" id="skillchip" hidden></div></div>
+      <label class="search" for="pq">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93A0B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="pq" type="search" placeholder="Search by name or technology, like Kafka" aria-label="Search projects" autocomplete="off">
+      </label>
+    </div>
+    <div class="px">
+      <div class="plist-wrap">
+        <div class="pcount" id="pcount"></div>
+        <div class="plist" id="plist" role="listbox" aria-label="Projects"></div>
+      </div>
+      <article class="pdetail" id="pdetail" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="pad">
+  <div class="wrap">
+    <div class="head"><div><h2 class="h2">Where I've worked</h2><p class="sub">Four companies, four industries. Pick one to see what I did there.</p></div></div>
+    <div class="exp">
+      <div class="jtabs" role="tablist" aria-label="Companies" id="jtabs"></div>
+      <div class="jpanel" role="tabpanel" id="jpanel"></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="pad band">
+  <div class="wrap">
+    <div class="head">
+      <div><h2 class="h2">Technical skills</h2><p class="sub" id="sksub"></p></div>
+      <div class="ring-ctl">
+        <button class="icon-btn" type="button" id="rprev" aria-label="Previous skill group"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="icon-btn" type="button" id="rplay" aria-label="Pause rotation"><svg id="rplay-i" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg></button>
+        <button class="icon-btn" type="button" id="rnext" aria-label="Next skill group"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="floor" aria-hidden="true"></div>
+      <div class="ring" id="ring" role="tablist" aria-label="Skill groups"></div>
+    </div>
+    <div class="spanel" id="spanel" role="tabpanel" aria-live="polite"></div>
+    <details class="allsk" id="allsk">
+      <summary>Browse and search all skills</summary>
+      <div class="allsk-in">
+        <label class="search" for="skq">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93A0B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="skq" type="search" placeholder="Search skills, like Kafka or LangGraph" aria-label="Search skills" autocomplete="off">
+        </label>
+        <p class="empty" id="skempty" hidden></p>
+        <div class="matrix" id="matrix"></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="education" class="pad">
+  <div class="wrap">
+    <div class="head"><div><h2 class="h2">Education</h2></div></div>
+    <div class="edu" id="edu"></div>
+  </div>
+</section>
+
+<section id="contact" class="pad">
+  <div class="wrap">
+    <div class="cta dots">
+      <div class="stripe" aria-hidden="true"><i style="--c:var(--fe)"></i><i style="--c:var(--be)"></i><i style="--c:var(--ai)"></i><i style="--c:var(--data)"></i></div>
+      <h2>Let's build something people rely on.</h2>
+      <p>Hiring for full stack, backend, or applied AI work? I usually reply within a day.</p>
+      <div class="row" style="align-items:center">
+        <span class="mail" id="mail">mailavarapucharithavya@gmail.com</span>
+        <button class="btn primary" id="copy" type="button">Copy email</button>
+      </div>
+      <div class="clinks">
+        <span>405-978-5999</span>
+        <a href="https://github.com/charithavya" target="_blank" rel="noopener">github.com/charithavya</a>
+        <a href="https://www.linkedin.com/in/charithavya-mailavarapu" target="_blank" rel="noopener">linkedin.com/in/charithavya-mailavarapu</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer style="border-top:1px solid #161F33"><div class="wrap"><span>Charithavya Mailavarapu, 2026</span><a href="#top">Back to top</a></div></footer>
+
+<script>
+const DATA = {
+ "person": {
+  "name": "Charithavya Mailavarapu",
+  "first": "Charithavya",
+  "initials": "CM",
+  "role": "Senior Python Full Stack Engineer (AI)",
+  "email": "mailavarapucharithavya@gmail.com",
+  "phone": "405-978-5999",
+  "github": "github.com/charithavya",
+  "linkedin": "linkedin.com/in/charithavya-mailavarapu",
+  "summary": "I build complete products, from the React screens people use every day to the FastAPI services and LLM pipelines behind them. Seven years shipping in banking, health care, retail, and IT services, with a focus on AI features that hold up in production."
+ },
+ "roles": [
+  "Python Full Stack Engineer",
+  "AI and LLM Engineer",
+  "FastAPI and React Developer",
+  "Systems Builder"
+ ],
+ "stats": [
+  {
+   "v": "7+",
+   "k": "years building web apps in production"
+  },
+  {
+   "v": "4",
+   "k": "industries: banking, health care, retail, and IT"
+  },
+  {
+   "v": "91%",
+   "k": "RAG answer accuracy on a 400-question eval set"
+  },
+  {
+   "v": "100+",
+   "k": "tools and practices across nine areas"
+  }
+ ],
+ "services": [
+  {
+   "name": "Frontend",
+   "cat": "Frontend",
+   "body": "Analyst workspaces, clinical dashboards, and manager tools in React and Next.js, with streaming answers, real-time updates, and shared component libraries.",
+   "tags": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind",
+    "Redux"
+   ]
+  },
+  {
+   "name": "Backend and data",
+   "cat": "Backend",
+   "body": "Async APIs and microservices that stay fast at peak, plus event-driven and batch pipelines on Kafka, RabbitMQ, and Airflow.",
+   "tags": [
+    "FastAPI",
+    "Django",
+    "PostgreSQL",
+    "Kafka",
+    "AWS"
+   ]
+  },
+  {
+   "name": "AI and LLM systems",
+   "cat": "AI",
+   "body": "RAG pipelines, LangGraph agents, MCP tool servers, and evaluation harnesses that keep accuracy measured and costs under control.",
+   "tags": [
+    "Claude API",
+    "LangGraph",
+    "MCP",
+    "pgvector",
+    "PyTorch"
+   ]
+  }
+ ],
+ "projects": [
+  {
+   "id": "loan",
+   "type": "Professional",
+   "featured": true,
+   "cats": [
+    "Frontend",
+    "Backend",
+    "AI"
+   ],
+   "org": "First Citizens Bank",
+   "year": "2025",
+   "metric": "−73%",
+   "metricLabel": "review time",
+   "title": "Loan Review Intelligence Platform",
+   "summary": "LLM document intelligence platform with structured extraction, cited RAG answers, and an agent layer.",
+   "challenge": "Loan analysts spent about 45 minutes per document locating rates, covenants, and maturity dates, then manually cross-referenced a 12,000-page credit policy corpus.",
+   "built": [
+    "Next.js workspace with a split-pane document viewer and streamed, cited answers.",
+    "Five FastAPI services with Claude extraction, hybrid RAG in pgvector, and a LangGraph agent over MCP tools.",
+    "Evaluation gate that blocks any release that drops accuracy, citations, or latency."
+   ],
+   "flow": [
+    "Next.js client",
+    "API Gateway",
+    "Extraction",
+    "Hybrid RAG",
+    "Agent + MCP",
+    "Eval gate"
+   ],
+   "impact": "Review time dropped from about 45 minutes to 12, RAG accuracy reached 91% on a 400-question set, and LLM spend held about 30% under budget at 300+ concurrent sessions.",
+   "metrics": [
+    {
+     "v": "45 → 12",
+     "k": "minutes per review"
+    },
+    {
+     "v": "91%",
+     "k": "RAG answer accuracy"
+    },
+    {
+     "v": "30%",
+     "k": "under LLM budget"
+    },
+    {
+     "v": "300+",
+     "k": "concurrent sessions"
+    }
+   ],
+   "stack": [
+    "Next.js",
+    "TypeScript",
+    "FastAPI",
+    "asyncio",
+    "Celery",
+    "Claude API",
+    "LangGraph",
+    "MCP",
+    "pgvector",
+    "PostgreSQL",
+    "Redis",
+    "MLflow",
+    "AWS ECS",
+    "Terraform"
+   ],
+   "icon": "docscan",
+   "group": "Work"
+  },
+  {
+   "id": "dash",
+   "type": "Professional",
+   "cats": [
+    "Frontend",
+    "Backend"
+   ],
+   "org": "NextGen Health Care",
+   "year": "2023",
+   "metric": "−40%",
+   "metricLabel": "page load",
+   "title": "Provider Dashboard and GraphQL API",
+   "summary": "React and Apollo provider dashboards backed by a Strawberry GraphQL API that collapses six REST round-trips into a single query.",
+   "challenge": "Each patient timeline required six sequential REST calls, so provider screens lagged during peak clinic hours.",
+   "built": [
+    "React dashboards with Redux Toolkit, Apollo Client, and Material UI, featuring calendar views, patient timelines, and filterable message queues.",
+    "Strawberry GraphQL schema that resolves a full patient timeline in one request.",
+    "Django REST Framework services for scheduling and patient intake.",
+    "Jest and React Testing Library suites covering the scheduling and messaging flows."
+   ],
+   "flow": [
+    "React + Apollo",
+    "GraphQL gateway",
+    "Django services",
+    "PostgreSQL"
+   ],
+   "impact": "Page load time fell about 40%, and scheduling APIs serve 40+ clinics at p95 under 250 ms.",
+   "metrics": [
+    {
+     "v": "6 → 1",
+     "k": "requests per timeline"
+    },
+    {
+     "v": "40+",
+     "k": "clinics served"
+    },
+    {
+     "v": "<250 ms",
+     "k": "p95 API latency"
+    }
+   ],
+   "stack": [
+    "React",
+    "Redux Toolkit",
+    "Apollo Client",
+    "Material UI",
+    "Strawberry GraphQL",
+    "Django REST Framework",
+    "PostgreSQL",
+    "Jest"
+   ],
+   "icon": "layout",
+   "group": "Work"
+  },
+  {
+   "id": "msg",
+   "type": "Professional",
+   "cats": [
+    "Backend",
+    "AI"
+   ],
+   "org": "NextGen Health Care",
+   "year": "2023",
+   "metric": "<1 s",
+   "metricLabel": "delivery",
+   "title": "Real-time Messaging with ML Triage",
+   "summary": "Event-driven patient messaging over WebSockets with a fine-tuned DistilBERT classifier that prioritizes urgent messages.",
+   "challenge": "Messages arrived on a 30-second polling loop, and urgent requests sat in the same queue as routine questions.",
+   "built": [
+    "Bidirectional messaging over WebSockets using Django Channels with a Redis channel layer.",
+    "Fine-tuned DistilBERT urgency classifier in PyTorch that triages messages on arrival.",
+    "MongoDB document store for polymorphic message metadata across web, SMS, and email.",
+    "Node.js notification microservice consuming RabbitMQ events to fan out SMS, email, and push."
+   ],
+   "flow": [
+    "Patient client",
+    "WebSocket",
+    "Django Channels",
+    "Triage model",
+    "Care team"
+   ],
+   "impact": "Delivery latency dropped below one second, and urgent routing accuracy rose from 78% to 92%.",
+   "metrics": [
+    {
+     "v": "<1 s",
+     "k": "delivery, was 30 s"
+    },
+    {
+     "v": "92%",
+     "k": "triage accuracy, was 78%"
+    },
+    {
+     "v": "3",
+     "k": "notification channels"
+    }
+   ],
+   "stack": [
+    "Django Channels",
+    "WebSockets",
+    "Redis",
+    "PyTorch",
+    "Hugging Face",
+    "MongoDB",
+    "Node.js",
+    "RabbitMQ"
+   ],
+   "icon": "chat",
+   "group": "Work"
+  },
+  {
+   "id": "notes",
+   "type": "Professional",
+   "cats": [
+    "AI"
+   ],
+   "org": "NextGen Health Care",
+   "year": "2024",
+   "metric": "6 min",
+   "metricLabel": "per visit",
+   "title": "De-identified Clinical Summarization",
+   "summary": "LLM note summarization with de-identification enforced at the network boundary, plus a RAG-based patient FAQ assistant.",
+   "challenge": "Providers lost visit time to long clinical notes and repetitive patient questions about hours, billing, and prep.",
+   "built": [
+    "OpenAI-based summarization pipeline that strips PHI before any text leaves the network.",
+    "Patient FAQ assistant grounded in a compact RAG index over clinic policies.",
+    "Serverless AWS Lambda functions that extract text from inbound faxes and uploads and attach it to patient records."
+   ],
+   "flow": [
+    "Clinical note",
+    "De-identify",
+    "LLM",
+    "Summary",
+    "Provider"
+   ],
+   "impact": "Providers save an estimated 6 minutes per visit, with HIPAA controls on every record access.",
+   "metrics": [
+    {
+     "v": "6 min",
+     "k": "saved per visit"
+    },
+    {
+     "v": "HIPAA",
+     "k": "encryption and audit trails"
+    }
+   ],
+   "stack": [
+    "OpenAI API",
+    "Python",
+    "RAG",
+    "AWS Lambda",
+    "Azure Functions",
+    "PostgreSQL"
+   ],
+   "icon": "notes",
+   "group": "Work"
+  },
+  {
+   "id": "forecast",
+   "type": "Professional",
+   "cats": [
+    "AI",
+    "Backend",
+    "Data"
+   ],
+   "org": "7-Eleven",
+   "year": "2022",
+   "metric": "−12%",
+   "metricLabel": "stockouts",
+   "title": "Demand Forecasting and Order Service",
+   "summary": "Gradient-boosted demand forecasts feeding containerized ordering microservices that generate nightly orders for thousands of stores.",
+   "challenge": "Store orders ignored weather, promotions, and local events, so high-velocity items sold out.",
+   "built": [
+    "Gradient boosting models in scikit-learn trained on sales, weather, and promotion signals.",
+    "Feature engineering pipelines in Pandas and NumPy for sales history, holidays, and local events.",
+    "Flask, then FastAPI, ordering microservices on Kubernetes with health checks and horizontal autoscaling."
+   ],
+   "flow": [
+    "POS data",
+    "Feature pipeline",
+    "Forecast model",
+    "Order service",
+    "Stores"
+   ],
+   "impact": "Out-of-stock events fell about 12% across pilot regions.",
+   "metrics": [
+    {
+     "v": "−12%",
+     "k": "out-of-stock events"
+    },
+    {
+     "v": "Nightly",
+     "k": "batch for thousands of stores"
+    }
+   ],
+   "stack": [
+    "scikit-learn",
+    "Pandas",
+    "NumPy",
+    "Flask",
+    "FastAPI",
+    "Docker",
+    "Kubernetes"
+   ],
+   "icon": "trend",
+   "group": "Work"
+  },
+  {
+   "id": "stream",
+   "type": "Professional",
+   "cats": [
+    "Backend",
+    "Data"
+   ],
+   "org": "7-Eleven",
+   "year": "2022",
+   "metric": "10x",
+   "metricLabel": "faster queries",
+   "title": "Streaming Inventory Data Platform",
+   "summary": "Kafka stream processing with dead-letter queues, Airflow-orchestrated ELT into Snowflake, and PostgreSQL query optimization.",
+   "challenge": "Regional dashboards lagged a full day behind, and brittle cron scripts failed regularly.",
+   "built": [
+    "Kafka consumers with retry policies and dead-letter queues so malformed events never stall the stream.",
+    "Airflow DAGs with data quality gates loading PostgreSQL and Snowflake.",
+    "Query tuning with targeted indexes, rewritten joins, and materialized views.",
+    "PCI DSS controls that tokenize card references and keep them out of logs and analytics tables."
+   ],
+   "flow": [
+    "POS events",
+    "Kafka",
+    "Airflow",
+    "Snowflake",
+    "Dashboards"
+   ],
+   "impact": "Inventory data now lands within minutes instead of next day, failed runs dropped to near zero, and ad-hoc data requests fell about half.",
+   "metrics": [
+    {
+     "v": "10x",
+     "k": "faster reporting queries"
+    },
+    {
+     "v": "~0",
+     "k": "failed pipeline runs"
+    },
+    {
+     "v": "−50%",
+     "k": "ad-hoc data requests"
+    }
+   ],
+   "stack": [
+    "Apache Kafka",
+    "Apache Airflow",
+    "PostgreSQL",
+    "Snowflake",
+    "Python",
+    "PyTest"
+   ],
+   "icon": "stream",
+   "group": "Work"
+  },
+  {
+   "id": "mgr",
+   "type": "Professional",
+   "cats": [
+    "Frontend"
+   ],
+   "org": "7-Eleven",
+   "year": "2021",
+   "metric": "−35%",
+   "metricLabel": "load time",
+   "title": "Store Analytics Dashboards",
+   "summary": "Regional manager dashboards built on a shared React component library, with a Redis caching layer for hot store and product data.",
+   "challenge": "Managers relied on one-off report requests and a slow legacy Angular portal.",
+   "built": [
+    "React dashboards visualizing sales trends, stock levels, and forecast accuracy by store.",
+    "Reusable chart and table component library shared across forecasting, inventory, and ordering apps.",
+    "Performance work and new inventory screens in the legacy Angular portal during the migration.",
+    "Redis caching for frequently requested store and product data."
+   ],
+   "flow": [
+    "React client",
+    "FastAPI",
+    "Redis cache",
+    "PostgreSQL"
+   ],
+   "impact": "Dashboard load time dropped about 35%, and recurring report requests moved to self-service.",
+   "metrics": [
+    {
+     "v": "−35%",
+     "k": "dashboard load time"
+    },
+    {
+     "v": "3",
+     "k": "apps on one component library"
+    }
+   ],
+   "stack": [
+    "React",
+    "Angular",
+    "Redis",
+    "Nginx",
+    "Gunicorn"
+   ],
+   "icon": "chart",
+   "group": "Work"
+  },
+  {
+   "id": "ticket",
+   "type": "Professional",
+   "cats": [
+    "Frontend",
+    "Backend"
+   ],
+   "org": "Knoah Solutions",
+   "year": "2020",
+   "metric": "300+",
+   "metricLabel": "agents",
+   "title": "Support Ticketing Platform",
+   "summary": "Django and MySQL ticketing system with extensible routing, ML-based ticket tagging, and role-based access.",
+   "challenge": "Support teams tracked tickets in shared spreadsheets with no routing, permissions, or reporting.",
+   "built": [
+    "Django and MySQL ticket tracker, with high-traffic screens later migrated to React.",
+    "Routing engine refactored with the Factory and Observer patterns, plus a text classifier that tags tickets by category.",
+    "Role-based access so agents, leads, and managers see only their own data.",
+    "Automated Pandas reporting that saves team leads about 5 hours a week."
+   ],
+   "flow": [
+    "Agent UI",
+    "Django",
+    "Routing + classifier",
+    "MySQL",
+    "Reports"
+   ],
+   "impact": "300+ agents moved off spreadsheets, and team leads reclaimed about 5 hours a week.",
+   "metrics": [
+    {
+     "v": "300+",
+     "k": "support agents"
+    },
+    {
+     "v": "5 hrs",
+     "k": "saved per lead weekly"
+    }
+   ],
+   "stack": [
+    "Django",
+    "MySQL",
+    "React",
+    "JavaScript",
+    "Pandas",
+    "Swagger",
+    "PyTest"
+   ],
+   "icon": "ticket",
+   "group": "Work"
+  },
+  {
+   "id": "pipe",
+   "type": "Personal",
+   "cats": [
+    "Frontend",
+    "Backend",
+    "AI"
+   ],
+   "org": "Independent build",
+   "year": "2026",
+   "metric": "9",
+   "metricLabel": "node types",
+   "title": "Visual AI Pipeline Builder",
+   "summary": "Node-based visual editor for composing AI workflows, with a FastAPI service that validates graph topology through cycle detection.",
+   "challenge": "Duplicated node components made new node types slow to add, and invalid cyclic pipelines could be submitted.",
+   "built": [
+    "Composable BaseNode abstraction powering Input, Output, LLM, and Text nodes, plus five new nodes: Math, Uppercase, Delay, Conditional, and API Request.",
+    "Auto-resizing Text node that parses {{variable}} tokens and generates an input handle for each one at runtime.",
+    "Zustand store managing nodes and edges, with a schematic design system of four color-coded node families.",
+    "FastAPI endpoint returning node count, edge count, and a DAG check via cycle detection."
+   ],
+   "flow": [
+    "Drag node",
+    "React Flow canvas",
+    "Zustand store",
+    "POST /pipelines/parse",
+    "DAG check"
+   ],
+   "impact": "Adding a node type means extending one shared base instead of duplicating components, and every pipeline is validated as a DAG before it runs.",
+   "metrics": [
+    {
+     "v": "9",
+     "k": "node types on one base"
+    },
+    {
+     "v": "5",
+     "k": "new nodes from one abstraction"
+    },
+    {
+     "v": "DAG",
+     "k": "validated on submit"
+    }
+   ],
+   "stack": [
+    "React",
+    "React Flow",
+    "Zustand",
+    "FastAPI",
+    "Python"
+   ],
+   "link": "",
+   "icon": "nodes",
+   "group": "Personal"
+  },
+  {
+   "id": "health",
+   "type": "Personal",
+   "cats": [
+    "AI",
+    "Backend",
+    "Frontend"
+   ],
+   "org": "Independent build",
+   "year": "2026",
+   "icon": "pulse",
+   "group": "Personal",
+   "metric": "RAG",
+   "metricLabel": "cited answers",
+   "title": "RAG Health Assistant",
+   "summary": "Retrieval-augmented health Q&A assistant that answers only from vetted public health sources, cites every claim, and declines when the sources do not cover the question.",
+   "challenge": "General chatbots answer health questions confidently even when they are wrong. Health answers need sources, clear limits, and a safe path for urgent symptoms.",
+   "built": [
+    "Ingestion pipeline that chunks public health guidance by section and stores embeddings in pgvector with source and topic metadata.",
+    "FastAPI retrieval service with hybrid keyword and vector search plus reranking before any text reaches the model.",
+    "Claude answers constrained to retrieved passages, with inline citations and a refusal path when grounding is too weak.",
+    "Safety layer that flags emergency symptoms and shows urgent-care guidance instead of a generated answer.",
+    "Next.js chat interface with streamed responses and expandable source cards for every citation."
+   ],
+   "flow": [
+    "Next.js chat",
+    "FastAPI",
+    "Hybrid retrieval",
+    "Rerank",
+    "Claude + citations",
+    "Safety check"
+   ],
+   "impact": "Every answer is traceable to a source, and the assistant says it does not know instead of guessing.",
+   "metrics": [],
+   "stack": [
+    "Next.js",
+    "TypeScript",
+    "FastAPI",
+    "Claude API",
+    "pgvector",
+    "PostgreSQL",
+    "LangChain"
+   ],
+   "link": ""
+  },
+  {
+   "id": "scrape",
+   "type": "Personal",
+   "cats": [
+    "Backend",
+    "Data"
+   ],
+   "org": "Independent build",
+   "year": "2026",
+   "metric": "41+",
+   "metricLabel": "items/search",
+   "title": "Resilient Retail Scraping Pipeline",
+   "summary": "Search, normalize, store, and reuse pipeline using headless browser automation, multi-layer deduplication, and price-history modeling.",
+   "challenge": "Retail sites render with JavaScript, rate-limit aggressively, and return duplicate listings across searches.",
+   "built": [
+    "Playwright automation with stealth settings for JavaScript-rendered pages, ZIP code targeting, and pagination, driven by a CLI.",
+    "Three-layer deduplication: a per-run Redis set, a unique constraint on product URL, and normalized name and size matching.",
+    "Token-bucket rate limiting, exponential backoff, and Redis TTL caching for searches and sessions.",
+    "PostgreSQL schema with SCD Type 1 products, SCD Type 2 price history, and an audit table for every run."
+   ],
+   "flow": [
+    "CLI",
+    "Playwright",
+    "Pydantic normalize",
+    "Redis dedup",
+    "Supabase Postgres"
+   ],
+   "impact": "Captures 41+ products per Walmart search and keeps a clean, queryable price history.",
+   "metrics": [
+    {
+     "v": "41+",
+     "k": "products per search"
+    },
+    {
+     "v": "3",
+     "k": "deduplication layers"
+    },
+    {
+     "v": "SCD2",
+     "k": "price history model"
+    }
+   ],
+   "stack": [
+    "Python",
+    "Playwright",
+    "Pydantic",
+    "Supabase",
+    "PostgreSQL",
+    "Redis"
+   ],
+   "link": "https://github.com/charithavya/prox-scraper-track-b",
+   "icon": "globe",
+   "group": "Personal"
+  },
+  {
+   "id": "jobs",
+   "type": "Personal",
+   "cats": [
+    "Frontend",
+    "AI"
+   ],
+   "org": "Independent build",
+   "year": "2026",
+   "icon": "chart",
+   "group": "Personal",
+   "metric": "3",
+   "metricLabel": "iterations",
+   "title": "AI Job Search Automation Dashboard",
+   "summary": "Browser dashboard that scans live job listings through the Dice MCP server and the Claude Messages API, then filters roles by experience level client-side.",
+   "challenge": "Job boards have no reliable experience-level filter, and large API responses were truncating mid-JSON inside the browser sandbox.",
+   "built": [
+    "Claude Messages API integration with the Dice MCP server configured through mcp_servers, scanning multiple target roles in one run.",
+    "Client-side regex parsing of year-of-experience phrases to exclude roles that ask for more than 3 years.",
+    "Fixed mid-JSON truncation by requesting an explicit fields list, cutting results to 15 per page, and raising max_tokens to 4096.",
+    "Visible debug panel and error surfacing added across three iterations, each fixing the failures of the last."
+   ],
+   "flow": [
+    "Role list",
+    "Claude API",
+    "Dice MCP",
+    "Field filter",
+    "Experience parser",
+    "Dashboard"
+   ],
+   "impact": "A stable scanning baseline that the next stage, tailored resumes and cover letters, can build on.",
+   "metrics": [
+    {
+     "v": "3",
+     "k": "iterations, each fixing the last"
+    },
+    {
+     "v": "15",
+     "k": "jobs per page after tuning"
+    },
+    {
+     "v": "4096",
+     "k": "max tokens to stop truncation"
+    }
+   ],
+   "stack": [
+    "Claude API",
+    "MCP",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Regex"
+   ],
+   "link": ""
+  },
+  {
+   "id": "smart",
+   "type": "Personal",
+   "cats": [
+    "AI",
+    "Backend"
+   ],
+   "org": "Independent build",
+   "year": "",
+   "icon": "search",
+   "group": "Personal",
+   "metric": "FAISS",
+   "metricLabel": "vector search",
+   "title": "Smart Resume Matcher",
+   "summary": "Semantic resume-to-job-description matching built on FAISS vector search, so matches reflect meaning instead of exact keywords.",
+   "challenge": "Keyword matching misses strong candidates whose resumes describe the same skills in different words.",
+   "built": [
+    "Embeddings for resumes and job descriptions indexed in FAISS for fast similarity search.",
+    "Ranking of resume and job pairs by semantic similarity rather than keyword overlap."
+   ],
+   "flow": [
+    "Resume + JD",
+    "Embeddings",
+    "FAISS index",
+    "Similarity search",
+    "Ranked matches"
+   ],
+   "impact": "Matches that reflect what a resume means, not just which words it repeats.",
+   "metrics": [],
+   "stack": [
+    "Python",
+    "FAISS",
+    "Embeddings",
+    "NLP"
+   ],
+   "link": ""
+  }
+ ],
+ "jobs": [
+  {
+   "company": "First Citizens Bank",
+   "short": "2025 to now",
+   "title": "Senior Python Full Stack Engineer (AI)",
+   "dates": "Jan 2025 to present",
+   "place": "Los Angeles, CA",
+   "domain": "Banking",
+   "points": [
+    "Delivered the analyst workspace in Next.js and TypeScript, with streaming answers over Server-Sent Events.",
+    "Designed five microservices behind AWS API Gateway and wrote the system design document.",
+    "Built async FastAPI endpoints supporting 300+ concurrent sessions with p95 under 300 ms.",
+    "Ran Locust load tests before each release and fixed two connection pool bottlenecks before month-end peaks.",
+    "Wrote runbooks that cut incident resolution time by about 40%, and mentored two junior developers.",
+    "Partnered with product owners and loan operations to turn analyst feedback into quarterly plans."
+   ],
+   "tech": [
+    "Next.js",
+    "FastAPI",
+    "Claude API",
+    "LangGraph",
+    "MCP",
+    "pgvector",
+    "Celery",
+    "AWS ECS",
+    "Terraform"
+   ]
+  },
+  {
+   "company": "NextGen Health Care",
+   "short": "2022 to 2024",
+   "title": "Python Full Stack Developer",
+   "dates": "Oct 2022 to Dec 2024",
+   "place": "Atlanta, GA",
+   "domain": "Health care",
+   "points": [
+    "Built provider dashboards in React and a GraphQL API that cut page load by about 40%.",
+    "Split the scheduling monolith into event-driven microservices so one failure no longer took down the platform.",
+    "Integrated EHR systems through HL7 FHIR for near real-time patient and appointment sync.",
+    "Built Azure Functions integrations that sync referral documents from two hospital partners every 15 minutes.",
+    "Enforced HIPAA with field-level encryption and audit trails, and raised test coverage from 55% to 85%.",
+    "Led root cause analysis for high-priority incidents using Datadog APM and CloudWatch."
+   ],
+   "tech": [
+    "React",
+    "Django",
+    "GraphQL",
+    "WebSockets",
+    "HL7 FHIR",
+    "PyTorch",
+    "RabbitMQ",
+    "MongoDB"
+   ]
+  },
+  {
+   "company": "7-Eleven",
+   "short": "2021 to 2022",
+   "title": "Python Developer",
+   "dates": "Jan 2021 to Sep 2022",
+   "place": "Irving, TX",
+   "domain": "Retail",
+   "points": [
+    "Designed the store ordering architecture as separate forecasting, ordering, and inventory services.",
+    "Containerized services on Kubernetes with autoscaling and Prometheus and Grafana monitoring.",
+    "Deployed with Gunicorn behind Nginx and set up Jenkins pipelines with SonarQube scans.",
+    "Built a price change impact report that helped category managers adjust pricing.",
+    "Replaced fragile cron jobs with Airflow pipelines and streamed sales events from Kafka."
+   ],
+   "tech": [
+    "React",
+    "FastAPI",
+    "scikit-learn",
+    "Airflow",
+    "Kafka",
+    "Snowflake",
+    "Kubernetes",
+    "Jenkins"
+   ]
+  },
+  {
+   "company": "Knoah Solutions",
+   "short": "2019 to 2020",
+   "title": "Software Engineer, started as intern",
+   "dates": "Jul 2019 to Dec 2020",
+   "place": "Hyderabad, India",
+   "domain": "IT services",
+   "points": [
+    "Built a Django and MySQL ticket tracker used by 300+ support agents.",
+    "Built a call quality review tool and Django admin customizations for operations staff.",
+    "Wrote REST APIs documented in Swagger and shared Postman collections with QA.",
+    "Gathered requirements with operations managers and demoed features at the end of each sprint."
+   ],
+   "tech": [
+    "Django",
+    "MySQL",
+    "JavaScript",
+    "React",
+    "Pandas",
+    "Swagger",
+    "PyTest"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "name": "AI, ML, and LLMs",
+   "cat": "AI",
+   "wide": true,
+   "items": [
+    "Anthropic Claude API",
+    "OpenAI API",
+    "AWS Bedrock",
+    "LangChain",
+    "LangGraph",
+    "Model Context Protocol",
+    "RAG",
+    "Prompt Engineering",
+    "Function Calling",
+    "LLM Evaluation",
+    "scikit-learn",
+    "PyTorch",
+    "Hugging Face Transformers",
+    "MLflow",
+    "Pandas",
+    "NumPy"
+   ],
+   "blurb": "LLM features measured against real evaluation sets, from RAG to agents.",
+   "icon": "spark"
+  },
+  {
+   "name": "Backend and APIs",
+   "cat": "Backend",
+   "wide": true,
+   "items": [
+    "FastAPI",
+    "Django",
+    "Django REST Framework",
+    "Flask",
+    "Node.js (Express)",
+    "Celery",
+    "SQLAlchemy",
+    "Pydantic",
+    "Gunicorn",
+    "Uvicorn",
+    "REST",
+    "GraphQL",
+    "WebSockets",
+    "Server-Sent Events",
+    "Swagger / OpenAPI",
+    "HL7 FHIR"
+   ],
+   "blurb": "Async APIs and services that stay fast under load.",
+   "icon": "server"
+  },
+  {
+   "name": "Frontend",
+   "cat": "Frontend",
+   "wide": false,
+   "items": [
+    "React",
+    "Next.js",
+    "Angular",
+    "Redux Toolkit",
+    "Tailwind CSS",
+    "Material UI",
+    "HTML5",
+    "CSS3"
+   ],
+   "blurb": "Fast, accessible interfaces with reusable components.",
+   "icon": "screen"
+  },
+  {
+   "name": "Languages",
+   "cat": "Frontend",
+   "wide": false,
+   "items": [
+    "Python",
+    "TypeScript",
+    "JavaScript",
+    "SQL",
+    "Bash"
+   ],
+   "blurb": "The languages behind every layer of the stack.",
+   "icon": "code"
+  },
+  {
+   "name": "Cloud and DevOps",
+   "cat": "Backend",
+   "wide": true,
+   "items": [
+    "AWS EC2",
+    "AWS S3",
+    "AWS Lambda",
+    "AWS ECS",
+    "AWS RDS",
+    "AWS SQS",
+    "AWS API Gateway",
+    "AWS CloudWatch",
+    "AWS IAM",
+    "Azure Functions",
+    "Azure Blob Storage",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "GitHub Actions",
+    "Jenkins",
+    "Nginx",
+    "Linux"
+   ],
+   "blurb": "Repeatable infrastructure, containers, and CI/CD.",
+   "icon": "cloud"
+  },
+  {
+   "name": "Databases and pipelines",
+   "cat": "Backend",
+   "wide": false,
+   "items": [
+    "PostgreSQL",
+    "pgvector",
+    "MySQL",
+    "MongoDB",
+    "Redis",
+    "Pinecone",
+    "Snowflake",
+    "Apache Kafka",
+    "RabbitMQ",
+    "Apache Airflow"
+   ],
+   "blurb": "Stores and pipelines that teams can trust.",
+   "icon": "db"
+  },
+  {
+   "name": "Architecture and security",
+   "cat": "Backend",
+   "wide": false,
+   "items": [
+    "Microservices",
+    "System Design",
+    "Event-Driven Architecture",
+    "API Gateway",
+    "OOP",
+    "SOLID Principles",
+    "Design Patterns",
+    "OAuth 2.0",
+    "JWT",
+    "Role-Based Access Control",
+    "HIPAA",
+    "PCI DSS"
+   ],
+   "blurb": "Systems designed to scale and stay secure.",
+   "icon": "shield"
+  },
+  {
+   "name": "Testing and monitoring",
+   "cat": "AI",
+   "wide": false,
+   "items": [
+    "PyTest",
+    "Jest",
+    "React Testing Library",
+    "Postman",
+    "Locust",
+    "mypy",
+    "Ruff",
+    "SonarQube",
+    "Prometheus",
+    "Grafana",
+    "Datadog",
+    "Sentry"
+   ],
+   "blurb": "Tests, types, and alerts before users notice.",
+   "icon": "gauge"
+  },
+  {
+   "name": "Tools and practices",
+   "cat": "Frontend",
+   "wide": false,
+   "items": [
+    "Git",
+    "Jira",
+    "GitHub Copilot",
+    "Claude Code",
+    "Agile / Scrum",
+    "Test-Driven Development",
+    "CI/CD",
+    "Code Reviews"
+   ],
+   "blurb": "How I plan, ship, and review work.",
+   "icon": "tools"
+  }
+ ],
+ "education": [
+  {
+   "degree": "M.S. in Computer Science",
+   "school": "University of Oklahoma",
+   "when": "Aug 2024 to Dec 2025"
+  },
+  {
+   "degree": "B.Tech in Computer Science",
+   "school": "Andhra University",
+   "when": "Graduated May 2020"
+  }
+ ],
+ "marquee": [
+  "Python",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "FastAPI",
+  "Django",
+  "Node.js",
+  "GraphQL",
+  "Claude API",
+  "OpenAI",
+  "AWS Bedrock",
+  "LangGraph",
+  "MCP",
+  "PostgreSQL",
+  "pgvector",
+  "Redis",
+  "Kafka",
+  "Airflow",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "AWS"
+ ]
+};
+
+(function(){
+  var D = DATA, $ = function(id){return document.getElementById(id)};
+  var C = {Frontend:'var(--fe)', Backend:'var(--be)', AI:'var(--ai)', Data:'var(--data)'};
+  var esc = function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var check = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--be)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>';
+  var chev = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--fe)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+  var arrowUR = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>';
+  var pills = function(cats){return cats.map(function(c){return '<span class="pill" style="--c:'+C[c]+'">'+c+'</span>'}).join('')};
+  var tags = function(t){return t.map(function(x){return '<span class="tag">'+esc(x)+'</span>'}).join('')};
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  $('lede').textContent = D.person.summary;
+
+  // typed roles
+  if(!reduce){
+    var ri=0, ch=D.roles[0].length, el=$('typed');
+    setInterval(function(){
+      var w=D.roles[ri];
+      ch++;
+      if(ch>w.length+30){ri=(ri+1)%D.roles.length;ch=0}
+      el.textContent=D.roles[ri].slice(0,Math.min(ch,D.roles[ri].length));
+    },55);
+  }
+
+  // code tabs
+  document.querySelectorAll('.ctab').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.ctab').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+      document.querySelectorAll('[data-pane]').forEach(function(p){p.hidden=p.getAttribute('data-pane')!==b.getAttribute('data-tab')});
+    });
+  });
+
+  $('marquee').innerHTML = D.marquee.concat(D.marquee).map(function(m){return '<span class="mitem">'+m+'</span>'}).join('');
+  $('stats').innerHTML = D.stats.map(function(s){return '<div class="stat"><b>'+s.v+'</b><span>'+s.k+'</span></div>'}).join('');
+
+  var icons = {
+    Frontend:'<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/>',
+    Backend:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>',
+    AI:'<path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/>'
+  };
+  var ico = function(k){return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[k]+'</svg>'};
+  $('svcs').innerHTML = D.services.map(function(s){
+    return '<div class="svc" style="--c:'+C[s.cat]+'"><div class="ico">'+ico(s.cat)+'</div><h3>'+s.name+'</h3><p>'+s.body+'</p><div class="tags" style="margin-top:auto">'+tags(s.tags)+'</div></div>';
+  }).join('');
+
+  // project explorer
+  var ICON={
+    docscan:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
+    search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8 11h6"/>',
+    agent:'<rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12v1.5M15 12v1.5M9.5 16h5"/>',
+    layout:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/>',
+    chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+    notes:'<path d="M8 3h8l4 4v14H4V3z"/><path d="M8 11h8M8 15h8M8 7h4"/>',
+    trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/>',
+    stream:'<path d="M3 8c3 0 3 3 6 3s3-3 6-3 3 3 6 3M3 15c3 0 3 3 6 3s3-3 6-3 3 3 6 3"/>',
+    chart:'<path d="M4 20V10M10 20V4M16 20v-7M2 20h20"/>',
+    ticket:'<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M15 6v2M15 11v2M15 16v2"/>',
+    nodes:'<circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/>',
+    globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+    cursor:'<path d="M5 3l14 7-6 2-2 6z"/>',
+    pulse:'<path d="M3 12h4l2-5 4 10 2-5h6"/>',
+    drop:'<path d="M12 3c3.5 4.2 6 7.6 6 10.5A6 6 0 0 1 6 13.5C6 10.6 8.5 7.2 12 3z"/>',
+    book:'<path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/>'
+  };
+  var svg=function(k,s){return '<svg width="'+(s||20)+'" height="'+(s||20)+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICON[k]||'')+'</svg>'};
+  var colorOf=function(p){return p.group==='Personal'?C.Data:C[p.cats[0]]};
+  var norm=function(x){return x.toLowerCase().replace(/\s*\(.*?\)\s*/g,'').replace(/^(anthropic|apache)\s+/,'').trim()};
+  var ALIAS={'hugging face transformers':['hugging face'],'aws api gateway':['api gateway'],'swagger / openapi':['swagger'],'graphql':['strawberry graphql'],'html5':['html'],'css3':['css']};
+  function usesSkill(p,skill){
+    var k=norm(skill), keys=[k].concat(ALIAS[k]||[]);
+    return p.stack.some(function(t){return keys.indexOf(norm(t))>-1});
+  }
+  var GROUPS=['All','Work','Personal'];
+  var pf=0, pq='', skillSel='', sel=D.projects[0].id;
+  function visible(){
+    var q=pq.trim().toLowerCase();
+    return D.projects.filter(function(p){
+      if(pf>0 && p.group!==GROUPS[pf])return false;
+      if(skillSel && !usesSkill(p,skillSel))return false;
+      if(!q)return true;
+      return (p.title+' '+p.summary+' '+p.org+' '+p.stack.join(' ')).toLowerCase().indexOf(q)>-1;
+    });
+  }
+  function renderSeg(){
+    $('seg').innerHTML=GROUPS.map(function(g,i){
+      var n=i?D.projects.filter(function(p){return p.group===g}).length:D.projects.length;
+      var label=g==='Work'?'Work projects':g==='Personal'?'Personal projects':'All';
+      return '<button type="button" data-pf="'+i+'" aria-pressed="'+(i===pf)+'">'+label+'<span class="cnt">'+n+'</span></button>';
+    }).join('');
+    var sc=$('skillchip');
+    sc.hidden=!skillSel;
+    sc.innerHTML=skillSel?'Using <b>'+esc(skillSel)+'</b><button type="button" id="clearskill" aria-label="Clear skill filter"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>':'';
+  }
+  function item(p){
+    var meta=esc(p.org)+(p.year?', '+p.year:'');
+    return '<button type="button" class="pitem" role="option" data-id="'+p.id+'" aria-selected="'+(p.id===sel)+'" style="--c:'+colorOf(p)+'">'+
+      '<span class="pico">'+svg(p.icon)+'</span>'+
+      '<span class="ptxt"><b>'+esc(p.title)+'</b><span>'+meta+'</span></span>'+
+      '<span class="pmet"><b>'+p.metric+'</b><span>'+p.metricLabel+'</span></span></button>';
+  }
+  function renderList(){
+    var list=visible();
+    if(list.length && !list.some(function(p){return p.id===sel})) sel=list[0].id;
+    $('pcount').textContent=list.length+(list.length===1?' project':' projects');
+    if(!list.length){
+      $('plist').innerHTML='<div class="pempty">No projects match. Try a broader term, like React or Python, or clear the filters.</div>';
+    } else {
+      var html='';
+      ['Work','Personal'].forEach(function(g){
+        var part=list.filter(function(p){return p.group===g});
+        if(!part.length)return;
+        html+='<div class="pgroup" role="presentation">'+(g==='Work'?'Work projects':'Personal projects')+'<span>'+part.length+'</span></div>'+part.map(item).join('');
+      });
+      $('plist').innerHTML=html;
+    }
+    renderDetail(list);
+  }
+  var arrowR='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E7B94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  var mockHTML='<div class="mock" aria-hidden="true"><div class="mock-doc"><small>loan_agreement.pdf</small>'+
+    [90,76,'h62',84,70,'h48',88,58,'h66',80].map(function(w){var h=typeof w==='string';return '<div class="ln'+(h?' hl':'')+'" style="width:'+(h?w.slice(1):w)+'%"></div>'}).join('')+
+    '</div><div class="mock-f"><small>Extracted fields, sample</small><div class="fld"><span>Interest rate</span><span>6.25%</span></div><div class="fld"><span>Maturity</span><span>2031-04-30</span></div><div class="fld"><span>Covenant</span><span>DSCR 1.25x</span></div><div class="ok"><span class="pulse"></span>3 citations verified</div></div></div>';
+  function renderDetail(list){
+    var el=$('pdetail');
+    if(!list.length){el.hidden=true;return}
+    el.hidden=false;
+    var i=0; list.forEach(function(p,k){if(p.id===sel)i=k});
+    var p=list[i], c=colorOf(p);
+    el.style.setProperty('--c',c);
+    el.innerHTML='<div class="pd-in">'+
+      '<div class="pd-top"><div class="pills"><span class="typeb'+(p.type==='Personal'?' personal':'')+'">'+p.type+'</span>'+pills(p.cats)+'</div>'+
+        '<div class="pd-nav"><button class="icon-btn" type="button" data-step="-1" aria-label="Previous project"'+(i===0?' disabled':'')+'><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>'+
+        '<button class="icon-btn" type="button" data-step="1" aria-label="Next project"'+(i===list.length-1?' disabled':'')+'><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div></div>'+
+      '<div class="pd-head"><h3>'+esc(p.title)+'</h3><div class="pd-meta">'+esc(p.org)+(p.year?', '+p.year:'')+'</div></div>'+
+      '<p class="pd-sum">'+esc(p.summary)+'</p>'+
+      (p.metrics.length?'<div class="mmetrics">'+p.metrics.slice(0,3).map(function(m){return '<div class="mm"><b>'+m.v+'</b><span>'+m.k+'</span></div>'}).join('')+'</div>':'')+
+      '<div><p class="ml">System architecture</p><ol class="arch">'+p.flow.map(function(s,k){return '<li><span class="node"><i>'+(k+1)+'</i>'+esc(s)+'</span>'+(k<p.flow.length-1?arrowR:'')+'</li>'}).join('')+'</ol></div>'+
+      '<div><p class="ml">Key highlights</p><ul class="hl">'+p.built.slice(0,3).map(function(b){return '<li>'+check+'<span>'+esc(b)+'</span></li>'}).join('')+'</ul></div>'+
+      '<div class="pd-foot"><div class="tags">'+tags(p.stack.slice(0,8))+'</div>'+(p.link?'<a class="btn sm" href="'+p.link+'" target="_blank" rel="noopener">View code on GitHub</a>':'')+'</div>'+
+    '</div>';
+  }
+  function select(id,focusList){
+    sel=id;
+    [].forEach.call($('plist').querySelectorAll('.pitem'),function(b){b.setAttribute('aria-selected',b.getAttribute('data-id')===id?'true':'false')});
+    renderDetail(visible());
+    var cur=$('plist').querySelector('[data-id="'+id+'"]');
+    if(cur){ if(focusList)cur.focus(); cur.scrollIntoView({block:'nearest',inline:'nearest',behavior:reduce?'auto':'smooth'}) }
+    if(window.innerWidth<=860 && !focusList){ var d=$('pdetail'); d.scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'}) }
+  }
+  $('seg').addEventListener('click',function(e){var b=e.target.closest('[data-pf]');if(!b)return;pf=+b.getAttribute('data-pf');renderSeg();renderList()});
+  $('skillchip').addEventListener('click',function(e){if(e.target.closest('#clearskill')){skillSel='';renderSeg();renderList();$('pq').focus()}});
+  window.__showSkill=function(){};
+  $('pq').addEventListener('input',function(e){pq=e.target.value;renderList()});
+  $('plist').addEventListener('click',function(e){var b=e.target.closest('[data-id]');if(b)select(b.getAttribute('data-id'))});
+  $('plist').addEventListener('keydown',function(e){
+    var keys={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}; if(!(e.key in keys))return;
+    e.preventDefault(); var list=visible(), i=0; list.forEach(function(p,k){if(p.id===sel)i=k});
+    var n=Math.max(0,Math.min(list.length-1,i+keys[e.key])); select(list[n].id,true);
+  });
+  $('pdetail').addEventListener('click',function(e){
+    var b=e.target.closest('[data-step]'); if(!b||b.disabled)return;
+    var list=visible(), i=0; list.forEach(function(p,k){if(p.id===sel)i=k});
+    var n=i+(+b.getAttribute('data-step')); if(n<0||n>=list.length)return;
+    sel=list[n].id;
+    [].forEach.call($('plist').querySelectorAll('.pitem'),function(x){x.setAttribute('aria-selected',x.getAttribute('data-id')===sel?'true':'false')});
+    renderDetail(list);
+    var cur=$('plist').querySelector('[data-id="'+sel+'"]'); if(cur)cur.scrollIntoView({block:'nearest',inline:'nearest'});
+    var nb=$('pdetail').querySelector('[data-step="'+b.getAttribute('data-step')+'"]'); if(nb&&!nb.disabled)nb.focus();
+  });
+  renderSeg(); renderList();
+
+  // experience
+  var job=0;
+  function renderJobs(){
+    $('jtabs').innerHTML = D.jobs.map(function(j,i){return '<button class="jtab" type="button" role="tab" data-j="'+i+'" aria-selected="'+(i===job)+'"><b>'+j.company+'</b><span>'+j.short+'</span></button>'}).join('');
+    var j=D.jobs[job];
+    $('jpanel').innerHTML = '<div style="display:flex;flex-direction:column;gap:8px"><h3>'+j.title+' <em>at '+j.company+'</em></h3><div class="meta"><span>'+j.dates+'</span><span>'+j.place+'</span><span>'+j.domain+'</span></div></div>'+
+      '<ul>'+j.points.map(function(p){return '<li>'+chev+'<span>'+esc(p)+'</span></li>'}).join('')+'</ul><div class="tags" style="padding-top:6px">'+tags(j.tech)+'</div>';
+  }
+  $('jtabs').addEventListener('click',function(e){var b=e.target.closest('[data-j]');if(!b)return;job=+b.getAttribute('data-j');renderJobs();$('jtabs').querySelector('[data-j="'+job+'"]').focus()});
+  renderJobs();
+
+  // skills carousel
+  var total=D.skills.reduce(function(a,g){return a+g.items.length},0);
+  $('sksub').textContent = total+' tools across nine areas. The group in front shows its skills.';
+  var countFor=function(skill){return D.projects.filter(function(p){return usesSkill(p,skill)}).length};
+  var SKI={
+    spark:'<path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/>',
+    server:'<rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/>',
+    screen:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    code:'<path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/>',
+    cloud:'<path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/>',
+    db:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>',
+    shield:'<path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+    gauge:'<path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/>',
+    tools:'<path d="M14.5 6.5a4 4 0 0 0-5.6 5L3 17.4 6.6 21l5.9-5.9a4 4 0 0 0 5-5.6l-2.5 2.5-2.8-.7-.7-2.8z"/>'
+  };
+  var G=D.skills, NG=G.length, step=360/NG, cur=0, playing=!reduce, timer=null;
+  $('ring').innerHTML=G.map(function(g,i){
+    return '<button type="button" class="rcard" role="tab" data-g="'+i+'" style="--c:'+C[g.cat]+'" aria-label="'+esc(g.name)+'">'+
+      '<span class="rico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SKI[g.icon]+'</svg></span>'+
+      '<b>'+esc(g.name)+'</b><span class="rcnt">'+g.items.length+' skills</span></button>';
+  }).join('');
+  var cards=[].slice.call($('ring').children);
+  function radius(){var w=$('stage').clientWidth;return w<520?[150,200]:w<900?[300,240]:[500,300]}
+  function layout(){
+    var R=radius(), Rx=R[0], Rz=R[1];
+    cards.forEach(function(el,i){
+      var rel=((i-cur)%NG+NG)%NG; if(rel>NG/2)rel-=NG;
+      var ang=rel*step, rad=ang*Math.PI/180;
+      var x=Math.sin(rad)*Rx, z=(Math.cos(rad)-1)*Rz;
+      var front=rel===0, depth=(Math.cos(rad)+1)/2, hide=Math.abs(rel)>2;
+      el.style.transform='translate(-50%,-50%) translate3d('+x.toFixed(1)+'px,'+((1-depth)*-26).toFixed(1)+'px,'+z.toFixed(1)+'px) rotateY('+(ang*-0.35).toFixed(1)+'deg) scale('+(front?1.12:1)+')';
+      el.style.opacity=hide?0:1;
+      el.style.filter=front?'none':'brightness('+(0.35+depth*0.45).toFixed(2)+') saturate(.8)';
+      el.style.pointerEvents=hide?'none':'';
+      el.style.zIndex=Math.round(depth*100);
+      el.classList.toggle('front',front);
+      el.setAttribute('aria-selected',front?'true':'false');
+      el.tabIndex=front?0:-1;
+    });
+  }
+  function renderPanel(){
+    var g=G[cur];
+    $('spanel').style.setProperty('--c',C[g.cat]);
+    $('spanel').innerHTML='<div class="sp-head"><div><h3><i></i>'+esc(g.name)+'</h3><p>'+esc(g.blurb||'')+'</p></div><span class="sp-n">'+(cur+1)+' / '+NG+'</span></div>'+
+      '<div class="sp-chips">'+g.items.map(function(n,k){
+        var c=countFor(n);
+        return '<span class="pop" style="--d:'+(k*35)+'ms">'+esc(n)+'</span>';
+      }).join('')+'</div>';
+  }
+  function go(n){var c=((n%NG)+NG)%NG;if(c===cur&&$('spanel').innerHTML)return;cur=c;layout();renderPanel()}
+  function setPlay(p){
+    playing=p; clearInterval(timer);
+    $('rplay').setAttribute('aria-label',p?'Pause rotation':'Play rotation');
+    $('rplay-i').innerHTML=p?'<path d="M9 6v12M15 6v12"/>':'<path d="M8 5l11 7-11 7z"/>';
+    if(p) timer=setInterval(function(){go(cur+1)},3200);
+  }
+  $('rprev').addEventListener('click',function(){go(cur-1);setPlay(false)});
+  $('rnext').addEventListener('click',function(){go(cur+1);setPlay(false)});
+  $('rplay').addEventListener('click',function(){setPlay(!playing)});
+  $('ring').addEventListener('click',function(e){var b=e.target.closest('[data-g]');if(!b)return;go(+b.getAttribute('data-g'));setPlay(false)});
+  $('ring').addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(cur+1);setPlay(false);cards[cur].focus()}if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1);setPlay(false);cards[cur].focus()}});
+  var hoverPause=false;
+  $('stage').addEventListener('mouseenter',function(){if(playing){hoverPause=true;clearInterval(timer)}});
+  $('stage').addEventListener('mouseleave',function(){if(hoverPause){hoverPause=false;setPlay(true)}});
+  var sx=null;
+  $('stage').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  $('stage').addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(cur+(dx<0?1:-1));setPlay(false)}sx=null});
+  var lastW=window.innerWidth;
+  window.addEventListener('resize',function(){if(window.innerWidth!==lastW){lastW=window.innerWidth;layout()}});
+  layout(); renderPanel(); setPlay(playing);
+
+  function renderSkills(q){
+    q=(q||'').trim().toLowerCase(); var shown=0;
+    $('matrix').innerHTML = D.skills.map(function(g){
+      var items=g.items.filter(function(n){return !q||n.toLowerCase().indexOf(q)>-1});
+      if(!items.length)return ''; shown++;
+      return '<div class="skrow" style="--c:'+C[g.cat]+'"><div><h3><i></i>'+g.name+'</h3><span class="cnt">'+(q?items.length+' of '+g.items.length:g.items.length)+' skills</span></div><div class="toks">'+
+        items.map(function(n){
+          var k=countFor(n), hit=q?' hit':'';
+          return '<span class="tok'+hit+'">'+esc(n)+'</span>';
+        }).join('')+'</div></div>';
+    }).join('');
+    var em=$('skempty'); em.hidden=shown>0; if(!shown)em.textContent='No skill matches "'+q+'". Try a broader term, like Python or AWS.';
+  }
+  $('skq').addEventListener('input',function(e){renderSkills(e.target.value)});
+  $('skills').addEventListener('click',function(e){var b=e.target.closest('[data-skill]');if(b)window.__showSkill(b.getAttribute('data-skill'))});
+  renderSkills('');
+
+  // education
+  var cap='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>';
+  $('edu').innerHTML = D.education.map(function(e){return '<div class="ecard"><div class="ico">'+cap+'</div><div><h3>'+e.degree+'</h3><p>'+e.school+'</p></div></div>'}).join('');
+
+  // copy
+  $('copy').addEventListener('click',function(){
+    var b=this;
+    try{navigator.clipboard.writeText(D.person.email).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1800)},sel)}catch(e){sel()}
+    function sel(){var r=document.createRange();r.selectNodeContents($('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy'}
+  });
+
+  // nav highlight
+  if('IntersectionObserver' in window){
+    var links=[].slice.call(document.querySelectorAll('#links a'));
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+    ['services','experience','skills'].forEach(function(id){io.observe($(id))});
+  }
+})();
+</script>
+
+</body></html>
